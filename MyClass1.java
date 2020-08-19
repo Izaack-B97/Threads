@@ -2,10 +2,10 @@
 public class MyClass1 { 
     
      /**
-         Una es extendiendo de la clase Thread y 
-         *  otra desde la interface Runnable() pasandole
-         * uyn thread como parametro a la instancia
-         */
+        Una es extendiendo de la clase Thread y 
+        *  otra desde la interface Runnable() pasandole
+        * uyn thread como parametro a la instancia
+    */
 
     // public static void main(String[] args) {
     //     MyClass2 mc = new MyClass2();
@@ -26,25 +26,16 @@ public class MyClass1 {
          * y otra desde la interface Runnable() pasandole
          * un thread como parametro a la instancia
          */
-        
-        // TODO code application logic here
-        // MyClass2 mc = new MyClass2();
-        // mc.start();
-        
-        // // Thread en una interface
-        // MyClass3 mc3 = new MyClass3();
-        // Thread th = new Thread(mc3);
-        // th.start();
 
         Thread t = Thread.currentThread(); // Nos dice que thread se esta ejecutando
         System.out.println("Thread Actual: \n" + t);
         t.setName("Principal");
         System.out.println("Despues del cambio: \n" + t);
 
-        MyClass2 mc = new MyClass2("Hijo 1");
+        MyClass2 mc = new MyClass2("Hijo 1", 1000);
         mc.start();
 
-        MyClass2 mc2 = new MyClass2("Hijo 2");
+        MyClass2 mc2 = new MyClass2("Hijo 2", 2000);
         mc2.start();
         
         try {

@@ -41,10 +41,18 @@ public class MyClass1 {
         t.setName("Principal");
         System.out.println("Despues del cambio: \n" + t);
 
-        MyClass2 md = new MyClass2();
-        md.start();
+        MyClass2 mc = new MyClass2("Hijo 1");
+        mc.start();
 
+        MyClass2 mc2 = new MyClass2("Hijo 2");
+        mc2.start();
+        
         try {
+            // Join le indica que termine el proceso de un Thread 
+            // para continuar con el otro proceso
+            mc.join();
+            mc2.join();
+
             System.out.print("Esperando a que finalize el programa");
 
             for(int i = 0 ; i <=3; i++) {

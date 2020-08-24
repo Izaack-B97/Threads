@@ -1,6 +1,7 @@
 public class MyInterface1 {
     
     public static void main (String[] args) {
+
         MyInterfaceChild1 mic1 = new MyInterfaceChild1();
         
         mic1.name = "Pepe";
@@ -24,7 +25,6 @@ public class MyInterface1 {
         } catch (Exception e) {
             System.out.println(e);
         }
-        
 
     }
 

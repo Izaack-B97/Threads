@@ -31,7 +31,6 @@ public class ClaseHija implements Runnable{
                     if(stop) {
                         break;
                     }
-
                 }
             } catch (Exception e) {
                 //TODO: handle exception

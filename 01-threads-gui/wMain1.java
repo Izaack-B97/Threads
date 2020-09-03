@@ -19,8 +19,8 @@ public class wMain1 {
         btn2.setBounds(10, 40, 150, 20);
 
         // ActionsListener
-        ActionListener listener = new ActionListener() { // Clase anonima
-
+        ActionListener listener = new ActionListener() { 
+            // Clase anonima
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == btn1) {
                     System.out.println("Click en el btn1 !");

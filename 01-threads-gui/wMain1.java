@@ -18,17 +18,34 @@ public class wMain1 {
         btn2.initValues();
         btn2.setBounds(10, 40, 150, 20);
 
+        JButton btnReanudar =  new JButton("P/R");
+        btnReanudar.setBounds(170, 40, 70, 20);
+
+        JButton btnStop = new JButton("Stop");
+        btnStop.setBounds(170, 10, 70, 20);
+
         // ActionsListener
         ActionListener listener = new ActionListener() { 
             // Clase anonima
             public void actionPerformed(ActionEvent e) {
                 if(e.getSource() == btn1) {
-                    System.out.println("Click en el btn1 !");
+                    // System.out.println("Click en el btn1 !");
+                    btn1.setEnabled(false);
+                    Thread t1 = new Thread(btn1);
+                    t1.start();
                 } 
 
                 if(e.getSource() == btn2) {
                     System.out.println("Click en el btn2 !");
                 } 
+
+                if (e.getSource() == btnReanudar) {
+
+                }
+
+                if (e.getSource() == btnStop) {
+                    btn1.stopHilo();
+                }
             }
 
         };
@@ -36,10 +53,14 @@ public class wMain1 {
         // Agregamos el listener a los botones
         btn1.addActionListener(listener);
         btn2.addActionListener(listener);
+        btnReanudar.addActionListener(listener);
+        btnStop.addActionListener(listener);
 
         // Agregamos el boton al frame
         v1.add(btn1); 
         v1.add(btn2);
+        v1.add(btnReanudar);
+        v1.add(btnStop);
 
         v1.setSize(300, 300);
         v1.setResizable(false); // No puedes cambiar el size

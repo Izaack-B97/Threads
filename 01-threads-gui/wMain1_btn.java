@@ -38,8 +38,8 @@ public class wMain1_btn extends JButton implements Runnable {
 
         this.setText(name);
         this.setEnabled(true);
-        /* btnReanudar.setEnabled(false);
-        btnStop.setText("Hola"); */
+        btnReanudar.setEnabled(false);
+        btnStop.setEnabled(false);
     }
     // end run
 

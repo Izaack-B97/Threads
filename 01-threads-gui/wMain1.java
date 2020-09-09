@@ -29,8 +29,7 @@ public class wMain1 {
         btnStop.setEnabled(false);
 
         btn1.btnReanudar = btnReanudar;
-        btn1.btnStop = btnStop; 
-
+        btn1.btnStop = btnStop;
 
         // ActionsListener
         ActionListener listener = new ActionListener() { 

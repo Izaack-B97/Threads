@@ -4,7 +4,7 @@ public class wMain1_btn extends JButton implements Runnable {
     
     private String name;
     private boolean pausar, stop;
-    public JButton btnReanudar, btnStop;
+    public JButton btnReanudar, btnStop, btnPR, btnStopStart;
 
     public wMain1_btn(String name) {
         this.name = name;
@@ -33,13 +33,24 @@ public class wMain1_btn extends JButton implements Runnable {
                         break;
                     }
                 }
-            } catch (Exception e) {}
+            } catch (Exception e) {
+                System.out.println(e);
+                System.out.println("dfdfd");
+            }
         }
 
         this.setText(name);
         this.setEnabled(true);
-        btnReanudar.setEnabled(false);
-        btnStop.setEnabled(false);
+        
+        if(this.getText() == "Click me !") {
+            btnReanudar.setEnabled(false);
+            btnStop.setEnabled(false);
+        } 
+
+        if(this.getText() == "Start") {
+            btnStopStart.setEnabled(false);
+            btnPR.setEnabled(false);
+        }
     }
     // end run
 

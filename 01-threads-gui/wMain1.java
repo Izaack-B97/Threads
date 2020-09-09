@@ -4,6 +4,8 @@ import java.awt.event.*;
 
 public class wMain1 {
 
+    boolean status = true;
+
     public void show() {
         JFrame v1 = new JFrame("Mi ventana 1");
 
@@ -20,9 +22,15 @@ public class wMain1 {
 
         JButton btnReanudar =  new JButton("P/R");
         btnReanudar.setBounds(170, 40, 70, 20);
+        btnReanudar.setEnabled(false);
 
         JButton btnStop = new JButton("Stop");
         btnStop.setBounds(170, 10, 70, 20);
+        btnStop.setEnabled(false);
+
+        btn1.btnReanudar = btnReanudar;
+        btn1.btnStop = btnStop; 
+
 
         // ActionsListener
         ActionListener listener = new ActionListener() { 
@@ -33,6 +41,9 @@ public class wMain1 {
                     btn1.setEnabled(false);
                     Thread t1 = new Thread(btn1);
                     t1.start();
+
+                    btnReanudar.setEnabled(true);
+                    btnStop.setEnabled(true);
                 } 
 
                 if(e.getSource() == btn2) {
@@ -40,11 +51,18 @@ public class wMain1 {
                 } 
 
                 if (e.getSource() == btnReanudar) {
-
+                    if (status) {
+                        btn1.pausarHilo();
+                        status = false;
+                    } else {
+                        btn1.reanudarHilo();
+                        status = true;
+                    }
                 }
 
                 if (e.getSource() == btnStop) {
                     btn1.stopHilo();
+                    status = true;
                 }
             }
 

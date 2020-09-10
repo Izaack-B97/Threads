@@ -51,6 +51,8 @@ public class wMain1_btn extends JButton implements Runnable {
             btnStopStart.setEnabled(false);
             btnPR.setEnabled(false);
         }
+
+        System.out.println(Thread.currentThread().getName());
     }
     // end run
 
@@ -69,7 +71,7 @@ public class wMain1_btn extends JButton implements Runnable {
         pausar = false;
         notify();
         System.out.println("Stop");
-
+    
     }
 
 }

@@ -31,6 +31,12 @@ public class wMain1 {
 
         btn1.btnReanudar = btnReanudar;
         btn1.btnStop = btnStop;
+
+        /**
+         * TODO: Ejemplo del profesot
+         * btn2.btnReanudar = btnPR;
+         * btn2.btnStop = btnStopStart;
+         */
         
         // Todo el rollo del segundo grupo de botones
         JButton btnPR = new JButton("PR Start");

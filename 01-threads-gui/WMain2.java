@@ -18,8 +18,19 @@ public class WMain2 {
 
         btn2.addActionListener(btn2);
 
+        WMain2_BtnPR btnPR = new WMain2_BtnPR("PR");
+        btnPR.initValues();
+        btnPR.setBounds(90, 10, 70, 20);
+
+        WMain2_BtnStop btnStop = new WMain2_BtnStop("Stop");
+        btnStop.initValues();
+        btnStop.setBounds(170, 10, 70, 20);
+
+
         v1.add(btn1);
         v1.add(btn2);
+        v1.add(btnPR);
+        v1.add(btnStop);
 
         v1.setSize(300, 300);
         v1.setResizable(false);

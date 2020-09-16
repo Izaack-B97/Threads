@@ -4,6 +4,8 @@ import javax.swing.*;
 public class WMain2 {
 
     public void show() {
+        
+
         JFrame v1 = new JFrame("Mi Ventana 2");
 
         WMain2_Btn btn1 = new WMain2_Btn("Click me !");
@@ -40,6 +42,32 @@ public class WMain2 {
         v1.add(btn2);
         v1.add(btnPR);
         v1.add(btnStop);
+
+        /*******************************/
+        
+        WMain2_BtnPR btnPR2 = new WMain2_BtnPR("PR");
+        btnPR2.initValues();
+        btnPR2.setBounds(90, 40, 70, 20);
+        btnPR2.setEnabled(false);
+        btnPR2.addActionListener(btnPR2);
+
+        WMain2_BtnStop btnStop2 = new WMain2_BtnStop("Stop");
+        btnStop2.initValues();
+        btnStop2.setBounds(170, 40, 70, 20);
+        btnStop2.setEnabled(false);
+        btnStop2.addActionListener(btnStop2);
+
+        btn2.btnPR = btnPR2;
+        btn2.btnStop = btnStop2;
+        btnPR2.btn1 = btn2;
+        btnStop2.btn1 = btn2;
+        btnStop2.btnPR = btnPR2;
+
+        v1.add(btnPR2);
+        v1.add(btnStop2);
+
+        /*******************************/
+
 
         v1.setSize(300, 300);
         v1.setResizable(false);

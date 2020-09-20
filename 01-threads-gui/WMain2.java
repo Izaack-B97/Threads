@@ -4,7 +4,6 @@ import javax.swing.*;
 public class WMain2 {
 
     public void show() {
-        
 
         JFrame v1 = new JFrame("Mi Ventana 2");
 
@@ -43,7 +42,7 @@ public class WMain2 {
         v1.add(btnPR);
         v1.add(btnStop);
 
-        /*******************************/
+        /**************  START OTRA SECCION DE BOTONES *****************/
         
         WMain2_BtnPR btnPR2 = new WMain2_BtnPR("PR");
         btnPR2.initValues();
@@ -66,7 +65,7 @@ public class WMain2 {
         v1.add(btnPR2);
         v1.add(btnStop2);
 
-        /*******************************/
+        /*************  END SECCION DE OTROS BOTONES ******************/
 
 
         v1.setSize(300, 300);

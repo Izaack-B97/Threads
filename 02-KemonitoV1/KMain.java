@@ -19,6 +19,7 @@ public class KMain {
         KMonito monito = new KMonito("0", "img/mario1.png");
         monito.setBounds(90, 10, 32, 39);
         monito.initValues();
+        monito.addMouseListener(monito);
 
         btnStart.monito = monito;
 

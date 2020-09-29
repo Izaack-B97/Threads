@@ -47,14 +47,23 @@ public class KMonito extends JLabel implements Runnable, MouseListener {
         // System.out.println("Click en la imagen");
         JDialog d = new JDialog();
         
-
         JLabel l1 = new JLabel("Time: ");
         JTextField t1 = new JTextField();
         JButton btnAceptar = new JButton("Aceptar");
 
+        // ActionListener listener = new ActionListener() {
+
+        //     public void actionPerformed(ActionEvent e) {
+        //         System.out.println("Hola");
+        //     }
+
+        // };
+
+
         l1.setBounds(10, 10, 40, 20);
         t1.setBounds(50, 10, 50, 20);
         btnAceptar.setBounds(40, 40, 70, 20);
+        // btnAceptar.addActionLister(listener);
 
         d.add(l1);
         d.add(t1);

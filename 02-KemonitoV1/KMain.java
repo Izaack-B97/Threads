@@ -1,7 +1,7 @@
 import javax.swing.*;
 
 public class KMain {
-   
+
     public void show() {
         JFrame v = new JFrame("Kemonito");
 
@@ -29,7 +29,7 @@ public class KMain {
         v.setVisible(true);
 
     }
- 
+
     public static void main (String[] args) {
         KMain k = new KMain();
         k.show();

@@ -28,9 +28,18 @@ public class SMain {
 
         JLabel lpan2 = new JLabel(new ImageIcon(this.getClass().getResource("images/bread.png")));
 
+        SBtns btnSandwiches = new SBtns("BtnSandwiches", "images/sandwich2.png");
+        btnSandwiches.initValues();
+        JLabel lsandwiches = new JLabel("Pedidos de Sandwich: ");
+        SContenedor cSandwiches = new SContenedor("0");
+        cSandwiches.initValues();
+
+        SBtnTimes btnTimes =  new SBtnTimes("BtnTimes", "images/stopwatch.png");
+        btnTimes.initValues();
 
         btnPan.objCont = cPan;
         btnHam.objCont = cHam;
+        btnSandwiches.objCont = cSandwiches;
 
         btnPan.setBounds(10, 10, 35, 35);
         user.setBounds(10, 45, 40, 40);
@@ -40,9 +49,15 @@ public class SMain {
         lham.setBounds(55, 80, 35, 35);
         cHam.setBounds(85, 95, 30, 20);
         lpan2.setBounds(100, 80, 35, 35);
+        btnSandwiches.setBounds(80, 10, 35, 35);
+        lsandwiches.setBounds(40, 120, 170, 20);
+        cSandwiches.setBounds(205, 120, 100, 20);
+        btnTimes.setBounds(115, 10, 35, 35);
 
         btnPan.addActionListener(btnPan);
         btnHam.addActionListener(btnHam);
+        btnSandwiches.addActionListener(btnSandwiches);
+        btnTimes.addActionListener(btnTimes);
 
         v.add(btnPan);
         v.add(user);
@@ -52,6 +67,10 @@ public class SMain {
         v.add(lham);
         v.add(cHam);
         v.add(lpan2);
+        v.add(btnSandwiches);
+        v.add(lsandwiches);
+        v.add(cSandwiches);
+        v.add(btnTimes);
 
         v.setSize(300, 220);
         v.setResizable(false);

@@ -37,9 +37,32 @@ public class SMain {
         SBtnTimes btnTimes =  new SBtnTimes("BtnTimes", "images/stopwatch.png");
         btnTimes.initValues();
 
+        SBtnReset btnReset = new SBtnReset("BtnReset", "images/reset.png");
+        btnReset.initValues();
+
+        SBtnStart btnStart = new SBtnStart("BtnStart", "images/start.png");
+        btnStart.initValues();
+
+        btnStart.user = user;
+
         btnPan.objCont = cPan;
         btnHam.objCont = cHam;
         btnSandwiches.objCont = cSandwiches;
+
+        btnReset.cPan = cPan;
+        btnReset.cHam = cHam;
+        btnReset.cSandwiches = cSandwiches;
+        btnReset.btnTimes = btnTimes;
+
+        btnStart.cPan = cPan;
+        btnStart.cHam = cPan;
+        btnStart.cSandwiches = cSandwiches;
+        btnStart.btnTimes = btnTimes;
+
+        user.cPan = cPan;
+        user.cHam = cPan;
+        user.cSandwiches = cSandwiches;
+        user.btnTimes = btnTimes;
 
         btnPan.setBounds(10, 10, 35, 35);
         user.setBounds(10, 45, 40, 40);
@@ -53,11 +76,15 @@ public class SMain {
         lsandwiches.setBounds(40, 120, 170, 20);
         cSandwiches.setBounds(205, 120, 100, 20);
         btnTimes.setBounds(115, 10, 35, 35);
+        btnReset.setBounds(150, 10, 25, 35);
+        btnStart.setBounds(40, 140, 35, 35);
 
         btnPan.addActionListener(btnPan);
         btnHam.addActionListener(btnHam);
         btnSandwiches.addActionListener(btnSandwiches);
         btnTimes.addActionListener(btnTimes);
+        btnReset.addActionListener(btnReset);
+        btnStart.addActionListener(btnStart);
 
         v.add(btnPan);
         v.add(user);
@@ -71,6 +98,8 @@ public class SMain {
         v.add(lsandwiches);
         v.add(cSandwiches);
         v.add(btnTimes);
+        v.add(btnReset);
+        v.add(btnStart);
 
         v.setSize(300, 220);
         v.setResizable(false);

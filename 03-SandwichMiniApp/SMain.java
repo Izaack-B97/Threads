@@ -60,7 +60,7 @@ public class SMain {
         btnStart.btnTimes = btnTimes;
 
         user.cPan = cPan;
-        user.cHam = cPan;
+        user.cHam = cHam;
         user.cSandwiches = cSandwiches;
         user.btnTimes = btnTimes;
 

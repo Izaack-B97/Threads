@@ -1,5 +1,4 @@
 import javax.swing.*;
-
 public class SUser extends JLabel implements Runnable{
     
     private String name, url;
@@ -30,9 +29,11 @@ public class SUser extends JLabel implements Runnable{
         int x = 10;
 
         for (int i = 1; i <= ciclos; i++) {
+            // System.out.println("Pan: " + cPan.getCantidad());
+
             if (cPan.getCantidad() >= 2 && cHam.getCantidad() >= 1 &&
                 cSandwiches.getCantidad() >= 1 && btnTimes.getTMP() > 0 &&
-                btnTimes.getTMP() > 0 &&  btnTimes.getTUP() > 0) {
+                btnTimes.getTPH() > 0 &&  btnTimes.getTUP() > 0) {
                 // *********************************************
                 // System.out.println("Hay recursos");
 
@@ -56,7 +57,7 @@ public class SUser extends JLabel implements Runnable{
 
                 cSandwiches.setCantidad(cSandwiches.getCantidad() - 1);
                 cSandwiches.setText(Integer.toString(cSandwiches.getCantidad()));
-        
+                
             } else {
                 System.out.println("No hay recursos o los tiempos son cero !");
             }

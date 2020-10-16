@@ -7,6 +7,9 @@ public class KMonito extends JLabel implements Runnable, MouseListener {
     private ImageIcon imgIcon;
     double time = 1.0;
     int y;
+    public KResultado kr;
+    private boolean stop;
+
     public KMonito(String name, String url, String url2, int y) {
         this.name = name;
         this.url = url;
@@ -23,8 +26,10 @@ public class KMonito extends JLabel implements Runnable, MouseListener {
     }
 
     public void run() {
-        System.out.println(name + ":" + y);
-
+        kr.setStatusM(false);
+        kr.setStatusL(false);
+        stop = false;
+        
         for(int x = 90; x <= 200; x+=3) {
             int timeInt = (int)(time * 1000);
 
@@ -38,10 +43,31 @@ public class KMonito extends JLabel implements Runnable, MouseListener {
 
             this.setIcon(imgIcon);
             this.setBounds(x, y, 32, 39);
+            
             try {
                 Thread.sleep(timeInt);
             } catch (Exception e) {
                 //TODO: handle exception
+            }
+            
+            try {
+                synchronized(this) {
+                    if(stop) {
+                        break;
+                    }
+                }
+            } catch (Exception e) {
+                //TODO: handle exception
+            }
+
+            if(x == 198) {
+                if(name.equals("Mario")) {
+                    kr.setStatusM(true);
+                    kr.miResultado();
+                } else { 
+                    kr.setStatusL(true);
+                    kr.miResultado();
+                }
             }
         }
     }
@@ -86,6 +112,10 @@ public class KMonito extends JLabel implements Runnable, MouseListener {
         d.setLocationRelativeTo(null);
         d.setDefaultCloseOperation(d.DISPOSE_ON_CLOSE);
         d.setVisible(true);
+    }
+
+    public synchronized void stopHilo() {
+        stop = true;
     }
     
 }

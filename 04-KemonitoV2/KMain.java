@@ -2,6 +2,8 @@ import javax.swing.*;
 
 public class KMain {
 
+    KResultado kr = new KResultado();
+
     public void show() {
         JFrame v = new JFrame("Kemonito");
 
@@ -39,6 +41,13 @@ public class KMain {
         btnStart.monito = monito;
         btnStart.monito2 = monito2;
         
+        monito.kr = kr;
+        monito2.kr = kr;
+
+        kr.resultado = resultado;
+        kr.monito = monito;
+        kr.monito2 = monito2;
+
         v.add(btnStart);
         v.add(monito);
         v.add(monito2);

@@ -47,6 +47,7 @@ public class KMain {
         kr.resultado = resultado;
         kr.monito = monito;
         kr.monito2 = monito2;
+        kr.btnStart = btnStart;
 
         v.add(btnStart);
         v.add(monito);

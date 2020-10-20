@@ -16,9 +16,9 @@ public class KBtn extends JButton implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
+        this.setEnabled(false);
         Thread t = new Thread(monito, name);
         t.start();
-
         Thread t2 = new Thread(monito2, name);
         t2.start();
     }

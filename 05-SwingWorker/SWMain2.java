@@ -3,6 +3,8 @@ import java.awt.event.*;
 
 public class SWMain2 {
 
+    SWContenedor swContenedor = new SWContenedor();
+
     public void show() {
         JFrame v = new JFrame("Contenedores");
 
@@ -28,18 +30,25 @@ public class SWMain2 {
 
         btnStart.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                SWorker2 swUser1 = new SWorker2();
+                swContenedor.setCantidad2(0);
+                texto1.setText("Thread end: ");
+
+                SWorker2 swUser1 = new SWorker2("User 1");
                 swUser1.texto1 = texto1;
                 swUser1.resultado = resultado1;
-                swUser1.cantidad = 20;
-                swUser1.time = 200;
+                swUser1.cantidad = 7;
+                swUser1.time = 1000;
+                swUser1.swContenedor = swContenedor;
+                swUser1.resultadoT = resultadoT;
                 swUser1.execute();
 
-                SWorker2 swUser2 = new SWorker2();
+                SWorker2 swUser2 = new SWorker2("User 2");
                 swUser2.texto1 = texto1;
                 swUser2.resultado = resultado2;
-                swUser2.cantidad = 15;
-                swUser2.time = 250;
+                swUser2.cantidad = 5;
+                swUser2.time = 1500;
+                swUser2.swContenedor = swContenedor;
+                swUser2.resultadoT = resultadoT;
                 swUser2.execute();
             }
         });

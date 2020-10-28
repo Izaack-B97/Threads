@@ -10,4 +10,8 @@ public class SWContenedor {
         return this.cantidad;
     }
 
+    public void setCantidad2(int c) {
+        this.cantidad = c;
+    }
+
 }
